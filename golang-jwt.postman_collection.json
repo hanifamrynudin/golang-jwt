@@ -1,0 +1,940 @@
+{
+	"info": {
+		"_postman_id": "3c040ca7-4d65-480c-8e10-afd42dbaf0bd",
+		"name": "golang-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16650044"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\": \"Hanif Fadillah Amrynudin\",\n    \"email\": \"documenthanif@gmail.com\",\n    \"password\": \"passwordnya123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success - Form Data input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "full_name",
+											"value": "Hanif Fadillah Amrynudin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "documenthanif16@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "passwordnya123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 06:30:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "321"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success register\",\n    \"data\": {\n        \"id\": 2,\n        \"full_name\": \"Hanif Fadillah Amrynudin\",\n        \"email\": \"documenthanif16@gmail.com\",\n        \"password\": \"$2a$08$o3J6mJ.eMM4hDAYmiR6ZKu1gpc/VQ1EF6PfHfTUuVcsk/0kbSIC3G\",\n        \"created_at\": \"2022-09-24T13:30:36.451+07:00\",\n        \"updated_at\": \"2022-09-24T13:30:36.451+07:00\",\n        \"deleted_at\": null\n    }\n}"
+						},
+						{
+							"name": "[200] Success - JSON Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"full_name\": \"Hanif Fadillah Amrynudin\",\n    \"email\": \"documenthanif@gmail.com\",\n    \"password\": \"passwordnya123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 06:44:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success register\",\n    \"data\": {\n        \"id\": 3,\n        \"full_name\": \"Hanif Fadillah Amrynudin\",\n        \"email\": \"documenthanif@gmail.com\",\n        \"password\": \"$2a$08$hMb1OuRmL1Xcz2tAp97hHOMz7jsqWX8//kjLUGmqgyMuNlWuYVxQC\",\n        \"created_at\": \"2022-09-24T13:44:11.533+07:00\",\n        \"updated_at\": \"2022-09-24T13:44:11.533+07:00\",\n        \"deleted_at\": null\n    }\n}"
+						},
+						{
+							"name": "[400] Failed - Email is exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"full_name\": \"Hanif Fadillah Amrynudin\",\n    \"email\": \"documenthanif@gmail.com\",\n    \"password\": \"passwordnya123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 09:46:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"message\": \"email is exist\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"documenthanif16@gmail.com\",\n    \"password\": \"passwordnya123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success - Form Data input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "documenthanif16@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "passwordnya123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 06:49:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success login\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQwODg1NTAsInVzZXJfaWQiOjJ9.V6L3ZdOnIqjOXHqC-m6Cpsxl0MTOZAxDtuvF70k1rjE\"\n}"
+						},
+						{
+							"name": "[200] Success - JSON Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"documenthanif@gmail.com\",\n    \"password\": \"passwordnya123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 06:50:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success login\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQwODg2MjMsInVzZXJfaWQiOjN9.ybpI2qnfw_QbMs12mNeKfbLeE375hPs7PuYzFtXcii8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQwODg2MjMsInVzZXJfaWQiOjN9.ybpI2qnfw_QbMs12mNeKfbLeE375hPs7PuYzFtXcii",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success - Barier Token valid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/auth/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 06:52:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "309"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success get user\",\n    \"data\": {\n        \"id\": 3,\n        \"full_name\": \"Hanif Fadillah Amrynudin\",\n        \"email\": \"documenthanif@gmail.com\",\n        \"password\": \"$2a$08$hMb1OuRmL1Xcz2tAp97hHOMz7jsqWX8//kjLUGmqgyMuNlWuYVxQC\",\n        \"created_at\": \"2022-09-24T06:44:11.533Z\",\n        \"updated_at\": \"2022-09-24T06:44:11.533Z\",\n        \"deleted_at\": null\n    }\n}"
+						},
+						{
+							"name": "[401] Failed - Barier Token not valid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/auth/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 06:55:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized\",\n    \"status_code\": 401\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQwODg1NTAsInVzZXJfaWQiOjJ9.V6L3ZdOnIqjOXHqC-m6Cpsxl0MTOZAxDtuvF70k1rjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ordered_at\": \"2022-09-24T14:21:46+00:00\",\n    \"customer_name\": \"Hanif Fadillah Amrynudin\",\n    \"items\": [\n        {\n            \"item_code\": 321,\n            \"description\": \"Mac\",\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success - Barier Token valid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ordered_at\": \"2019-11-09T21:21:46+00:00\",\n    \"customer_name\": \"Tom Jerry\",\n    \"items\": [\n        {\n            \"item_code\": 123,\n            \"description\": \"IPhone 10X\",\n            \"quantity\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:35:26 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success create order\",\n    \"data\": {\n        \"orders_id\": 1,\n        \"customer_name\": \"Tom Jerry\",\n        \"ordered_at\": \"2019-11-09T21:21:46Z\",\n        \"items\": [\n            {\n                \"items_id\": 1,\n                \"item_code\": 123,\n                \"description\": \"IPhone 10X\",\n                \"quantity\": 1,\n                \"orders_id\": 1,\n                \"created_at\": \"2022-09-24T14:35:26.977+07:00\",\n                \"updated_at\": \"2022-09-24T14:35:26.977+07:00\"\n            }\n        ],\n        \"created_at\": \"2022-09-24T14:35:26.971+07:00\",\n        \"updated_at\": \"2022-09-24T14:35:26.971+07:00\"\n    }\n}"
+						},
+						{
+							"name": "[401] Failed - Barier Token not valid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ordered_at\": \"2019-11-09T21:21:46+00:00\",\n    \"customer_name\": \"Tom Jerry\",\n    \"items\": [\n        {\n            \"item_code\": 123,\n            \"description\": \"IPhone 10X\",\n            \"quantity\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:36:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized\",\n    \"status_code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:45:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "735"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success get orders\",\n    \"data\": [\n        {\n            \"orders_id\": 1,\n            \"customer_name\": \"Tom Jerry\",\n            \"ordered_at\": \"2019-11-09T21:21:46Z\",\n            \"items\": [\n                {\n                    \"items_id\": 1,\n                    \"item_code\": 123,\n                    \"description\": \"IPhone 10X\",\n                    \"quantity\": 1,\n                    \"orders_id\": 1,\n                    \"created_at\": \"2022-09-24T07:35:26.977Z\",\n                    \"updated_at\": \"2022-09-24T07:35:26.977Z\"\n                }\n            ],\n            \"created_at\": \"2022-09-24T07:35:26.971Z\",\n            \"updated_at\": \"2022-09-24T07:35:26.971Z\"\n        },\n        {\n            \"orders_id\": 2,\n            \"customer_name\": \"Hanif Fadillah Amrynudin\",\n            \"ordered_at\": \"2022-09-24T14:21:46Z\",\n            \"items\": [\n                {\n                    \"items_id\": 2,\n                    \"item_code\": 321,\n                    \"description\": \"Mac\",\n                    \"quantity\": 1,\n                    \"orders_id\": 2,\n                    \"created_at\": \"2022-09-24T07:43:50.98Z\",\n                    \"updated_at\": \"2022-09-24T07:43:50.98Z\"\n                }\n            ],\n            \"created_at\": \"2022-09-24T07:43:50.977Z\",\n            \"updated_at\": \"2022-09-24T07:43:50.977Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:46:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success get order\",\n    \"data\": {\n        \"orders_id\": 1,\n        \"customer_name\": \"Tom Jerry\",\n        \"ordered_at\": \"2019-11-09T21:21:46Z\",\n        \"items\": [\n            {\n                \"items_id\": 1,\n                \"item_code\": 123,\n                \"description\": \"IPhone 10X\",\n                \"quantity\": 1,\n                \"orders_id\": 1,\n                \"created_at\": \"2022-09-24T07:35:26.977Z\",\n                \"updated_at\": \"2022-09-24T07:35:26.977Z\"\n            }\n        ],\n        \"created_at\": \"2022-09-24T07:35:26.971Z\",\n        \"updated_at\": \"2022-09-24T07:35:26.971Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "XXXeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQwODg1NTAsInVzZXJfaWQiOjJ9.V6L3ZdOnIqjOXHqC-m6Cpsxl0MTOZAxDtuvF70k1rjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ordered_at\": \"2022-09-24T14:21:46+00:00\",\n    \"customer_name\": \"Hanif Fadillah Amrynudin\",\n    \"items\": [\n        {\n            \"item_id\":1,\n            \"item_code\": 321,\n            \"description\": \"Mac\",\n            \"quantity\": 10\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success - Barier Token valid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ordered_at\": \"2022-09-24T14:21:46+00:00\",\n    \"customer_name\": \"Hanif Fadillah Amrynudin\",\n    \"items\": [\n        {\n            \"item_id\":1,\n            \"item_code\": 321,\n            \"description\": \"Mac\",\n            \"quantity\": 10\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:55:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success update order\",\n    \"data\": {\n        \"orders_id\": 2,\n        \"customer_name\": \"Hanif Fadillah Amrynudin\",\n        \"ordered_at\": \"2022-09-24T14:21:46Z\",\n        \"items\": [\n            {\n                \"items_id\": 2,\n                \"item_code\": 321,\n                \"description\": \"Mac\",\n                \"quantity\": 1,\n                \"orders_id\": 2,\n                \"created_at\": \"2022-09-24T07:43:50.98Z\",\n                \"updated_at\": \"2022-09-24T07:43:50.98Z\"\n            }\n        ],\n        \"created_at\": \"2022-09-24T07:43:50.977Z\",\n        \"updated_at\": \"2022-09-24T07:55:16.065Z\"\n    }\n}"
+						},
+						{
+							"name": "[401] Failed - Barier Token not valid",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ordered_at\": \"2022-09-24T14:21:46+00:00\",\n    \"customer_name\": \"Hanif Fadillah Amrynudin\",\n    \"items\": [\n        {\n            \"item_id\":1,\n            \"item_code\": 321,\n            \"description\": \"Mac\",\n            \"quantity\": 10\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"2"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:55:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized\",\n    \"status_code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQwODg1NTAsInVzZXJfaWQiOjJ9.V6L3ZdOnIqjOXHqC-m6Cpsxl0MTOZAxDtuvF70k1rjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[401] Failed - Barier Token not valid",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:57:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unauthorized\",\n    \"status_code\": 401\n}"
+						},
+						{
+							"name": "[200] Success - Barier Token valid",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 07:57:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"message\": \"Success delete order\",\n    \"data\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
